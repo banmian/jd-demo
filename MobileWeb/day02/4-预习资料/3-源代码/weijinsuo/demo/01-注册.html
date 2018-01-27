@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        用户名:
+        <input type="text" id="username">
+        <br> 密码:
+        <input type="text" id="password">
+        <br>
+        <input type="button" value="注册" id="register">
+    </form>
+    <script>
+    /**
+     * 1. 点击注册按钮的时候要将用户名和密码存储到本地存储中localStorage
+     * 2. 给注册按钮添加点击事件
+     * 3. 获取用户输入的用户名和密码存储到本地存储中
+     */
+    //给注册按钮注册点击事件
+    document.querySelector('#register').addEventListener('click', function(event) {
+        //获取用户名和密码
+        var username = document.querySelector('#username').value;
+        var password = document.querySelector('#password').value;
+        // 将用户名和密码存到本地存储中 
+        // localStorage中存储值只能存字符串类型 
+        // 存储的格式 是以用户名作为键 密码作为值存储到 localStorage
+        // setItem是用来存储数据(key,value) getItem获取数据(key)
+        localStorage.setItem(username, password);
+    });
+    </script>
+</body>
+
+</html>

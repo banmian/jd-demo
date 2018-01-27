@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        用户名:
+        <input type="text" id="username">
+        <br> 密码:
+        <input type="text" id="password">
+        <br>
+        <input type="button" value="登录" id="login">
+    </form>
+    <script>
+    /**
+     *  1. 获取登录按钮 添加点击事件 点击的时候获取存储中的用户名和密码和当前用户输入的进行判断 如果相等登录成功如果不相等就登录失败
+     *  1. 获取登录 按钮 添加点击事件
+     *  2. 获取用户输入的用户名和密码
+     *  3. 根据当前用户输入的用户名去存储中查找这个用户名对应的密码
+     *  4. 用当前输入的密码和存储中获取的密码进行判断 如果相等就成功 不相等就失败
+     */
+    document.querySelector('#login').addEventListener('click', function() {
+        var username = document.querySelector('#username').value;
+        var password = document.querySelector('#password').value;
+        var localStoragePassword = localStorage.getItem(username);
+        if (password == localStoragePassword) {
+            console.log('登录成功');
+        } else {
+            console.log('登录失败');
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .row div {
+        border: 1px solid #ccc;
+        height: 100px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+        width: 100%;
+    }
+    /* 超小屏幕一行放1个div  100%
+    小 中 大屏幕一行放2个div  50% */
+    /*当多个屏幕样式相同的时候只要写一个最小的屏幕的样式 让他向上兼容*/
+    @media(min-width: 768px) {
+        .row div {
+            width: 50%;
+        }
+    }
+    
+ /*   @media(min-width: 992px) {
+        .row div {
+            width: 50%;
+        }
+    }
+    
+    @media(min-width: 1200px) {
+        .row div {
+            width: 50%;
+        }
+    }*/
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+</body>
+
+</html>

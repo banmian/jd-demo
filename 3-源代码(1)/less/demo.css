@@ -1,0 +1,50 @@
+/* less里面可以完全的兼容CSS */
+/* body{
+	background-color: yellowgreen;
+} */
+/* 1. 定义变量 */
+/* js定义变量 */
+/* var 变量名 = 变量值; */
+/* less定义变量 */
+/* @变量名:变量值; */
+/* 一般网站主题颜色 很多地方都会变化的值 */
+/* 定义主题色变量 变量中间可以有横杠 */
+/* 使用变量 */
+body {
+  /* 定义和使用变量都要带@符号 */
+  /* background-color: @main-color; */
+}
+/* 2. 混入自定义函数 Mixin */
+/* function fun(size){
+	函数代码
+} */
+/* 定义一个自定义函数 */
+.bordertb {
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+}
+.box {
+  height: 50px;
+  /* 调用自定义函数 */
+  /* 代码使用传入的参数 */
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+}
+.box2 {
+  height: 50px;
+  margin-top: 20px;
+  /* 调用自定义函数 */
+  /* 代码使用传入的参数 */
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+}
+/* 自定义代参数函数 */
+/* @size就是自定义函数的参数  :1px是默认值  形参  如果有多个参数用逗号隔开 */
+.box3 {
+  height: 50px;
+  margin-top: 20px;
+  /* 传入实参就写值 */
+  /* 代码使用传入的参数 */
+  border-top: 5px solid greenyellow;
+  border-bottom: 5px solid greenyellow;
+}

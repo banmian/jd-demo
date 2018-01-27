@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .pcImg {
+        display: block;
+        height: 410px;
+        background-position: center center;
+    }
+     .mobileImg {
+        display: block;
+    }
+    
+    .mobileImg img {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 就是轮播图下面的小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 控制哪个轮播图的切换 -->
+            <!-- data-slide-to 表示控制第几张轮播图的切换 通过轮播图的索引 从0开始 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播图的所有轮播项 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- 一个item就代表一项轮播图 -->
+            <!-- active 表示当前正在显示的轮播图 active有且只能有一个 -->
+            <div class="item active">
+            	<!-- pcImg在 md 和 lg显示 在sm和xs隐藏
+            	mobileImg在sm 和xs显示 在md和lg隐藏 -->
+            	<!-- 在pc端也会加载移动端的图片
+            	在移动端也会加载PC端图片 -->
+                <a href="#" class="pcImg hidden-xs hidden-sm" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg hidden-md hidden-lg">
+                    <img src="img/slide_01_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="pcImg hidden-xs hidden-sm" style="background-image:url(img/slide_02_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg hidden-md hidden-lg">
+                    <img src="img/slide_02_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="pcImg hidden-xs hidden-sm" style="background-image:url(img/slide_03_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg hidden-md hidden-lg">
+                    <img src="img/slide_03_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="pcImg hidden-xs hidden-sm" style="background-image:url(img/slide_04_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg hidden-md hidden-lg">
+                    <img src="img/slide_04_640x340.jpg" alt="...">
+                </a>
+            </div>
+        </div>
+        <!-- 左右控制器按钮 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

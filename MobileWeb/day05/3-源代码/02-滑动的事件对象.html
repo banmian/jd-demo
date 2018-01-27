@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    /*	1. 什么是事件对象（触发事件的对象  鼠标触发 鼠标对象 键盘触发 键盘对象 手指触发 手指对象）*/
+    var div = document.querySelector('div');
+    div.addEventListener('click', function (e) {
+    	// 这个e回调函数里面的参数就是事件对象
+    	console.log(e);
+    });
+    // MouseEvent 鼠标事件对象
+    div.addEventListener('mouseover', function (e) {
+    	console.log(e);
+    });
+    // KeyboardEvent 键盘事件对象
+    window.addEventListener('keydown', function (e) {
+    	console.log(e);
+    });
+    // TouchEvent 触摸事件对象
+    div.addEventListener('touchstart', function (e) {
+    	console.log(e);
+    	/*触摸事件对象里面无法直接拿到手指的位置
+    	因为手指个数可能不是一个可能是多个 所有的手指的位置都会被记录到事件对象里面
+    	touches数组里面*/
+    });
+    </script>
+</body>
+
+</html>

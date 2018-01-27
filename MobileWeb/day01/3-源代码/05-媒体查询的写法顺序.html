@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .row div {
+        border: 1px solid #ccc;
+        height: 100px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+        width: 100%;
+    }
+    /*媒体查询的写法顺序 1. 如果使用min-width作为条件判断 条件要从小到大写 遵循向下覆盖的原则（当是大屏幕的时候会同时生效多个条件但是大屏幕的样式再后面 把前面小屏幕样式覆盖）
+  如果使用min-width作为条件 max-width:768的条件  可以使用默认值;
+    */
+    /*2. 在中屏设备一行放3个div  每个div 33.33%*/
+    /*3. 在小屏设备一行放2个div  每个div 50%*/
+    /*4. 在超小屏设备一行放1个div  每个div 100% -*/
+    
+   /* @media(max-width: 768px) {
+        .row div {
+            width: 100%;
+        }
+    }*/
+    
+    @media(min-width: 768px) {
+        .row div {
+            width: 50%;
+        }
+    }
+    
+    @media(min-width: 992px) {
+        .row div {
+            width: 33.33%;
+        }
+    }
+    
+    @media(min-width: 1200px) {
+        /*大括号里面的单独的代码块 需要写选择器{属性:值;}*/
+        .row div {
+            width: 25%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+</body>
+
+</html>

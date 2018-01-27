@@ -1,0 +1,372 @@
+/* 1. 当使用标签选择器的时候尽量用子代 带> 
+2. 同时最外面的容器用id选择器提升优先级
+3. 尽量不要给父容器限定死高度 */
+
+
+/* 定义主题色变量 */
+
+@main-color: #e92322;
+//双斜杠 这个注释会被删除
+/* 头部区域 */
+
+#header {
+    /* 顶部通栏 */
+    .topbar {
+        border-bottom: 1px solid #ccc;
+        .container {
+            .row {
+                > div {
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    border-left: 1px solid #ccc;
+                    font-size: 12px;
+                    >a {
+                        color: #666;
+                        &.qr-code {
+                            display: block;
+                            >img {
+                                display: none;
+                                position: absolute;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                z-index: 999;
+                            }
+                            &:hover {
+                                >img {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                    /* & + div{
+                        border-left: 1px solid #ccc;
+                    } */
+                    &:first-child {
+                        border-left: 0;
+                    }
+                    .btn-danger {
+                        background-color: @main-color;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-default {
+        background-color: #fff;
+        margin-bottom: 0;
+        z-index: 998;
+        /* 吸顶了之后脱标了之后就没有100%的宽度
+         */
+        width: 100%;
+        top: 0;
+        .navbar-header {
+            .navbar-toggle {
+                margin-top: 23px;
+            }
+            .navbar-brand {
+                height: 80px;
+                /* a标签自带了上下15px的padding */
+                line-height: 50px;
+                .icon-icon {
+                    color: @main-color;
+                    font-size: 30px;
+                }
+                .icon-logo {
+                    color: #000;
+                    font-size: 30px;
+                }
+            }
+        }
+        /* 注意用 navbar-collapse 不然另外一个collapse会变化可能一瞬间样式没效果 */
+        .navbar-collapse {
+            .navbar-nav {
+                >li {
+                    >a {
+                        height: 80px;
+                        line-height: 50px;
+                        &:hover {
+                            border-bottom: 2px solid @main-color;
+                        }
+                    }
+                    &.active {
+                        >a {
+                            background-color: #fff;
+                            border-bottom: 2px solid @main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 轮播图区域 */
+
+#slide {
+    .large-image {
+        display: block;
+        height: 410px;
+        background-position: center center;
+    }
+    .small-image img {
+        width: 100%;
+    }
+}
+
+
+/* 支付交易保障区域 */
+
+#payment {
+    /* 父元素和子元素直接的间距用padding */
+    padding: 40px 0px;
+    .container {
+        .row {
+            > div {
+                /* 兄弟直接的间距用margin */
+                margin-top: 10px;
+                .media {
+                    >a {
+                        color: #666;
+                        text-decoration: none;
+                        &:hover {
+                            color: @main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 立即预约 */
+
+#booking {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    /* line-height: 60px; */
+}
+
+
+/* 产品推荐 */
+
+#products {
+    padding: 40px 0;
+    background-color: #ccc;
+    .container {
+        .ul-wrapper {
+            /* overflow: auto; */
+            overflow: hidden;
+            .nav-tabs {
+                width: 576px;
+                >li {
+                    >a {
+                        /* 把所有a边框都去掉 */
+                        border: 0;
+                        color: #333;
+                        font-size: 16px;
+                        &:hover {
+                            background-color: #ccc;
+                        }
+                    }
+                    &.active {
+                        >a {
+                            background-color: #ccc;
+                            /* border:1px solid transparent;  */
+                            border-bottom: 3px solid @main-color;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane {
+                >.row {
+                    >div {
+                        margin-top: 20px;
+                        .product-box {
+                            background-color: #fff;
+                            position: relative;
+                            &.active {
+                                background-color: @main-color;
+                                color: #fff;
+                                &::before {
+                                    content: "\e915";
+                                    font-family: 'itcast';
+                                    font-size: 30px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: -6px;
+                                }
+                            }
+                            .product-left {
+                                height: 160px;
+                                margin-right: 120px;
+                                 @media(max-width:320px){
+                                    /* margin-right: 100px; */
+                                    font-size: 12px;
+                                }
+                                 @media(width:1024px){
+                                     margin-right: 100px; 
+                                    /* font-size: 12px; */
+                                }
+                                padding: 10px;
+                                >.row {
+                                    >div {
+                                        margin-top: 10px;
+                                    }
+                                }
+                                p {
+                                    margin-bottom: 0;
+                                }
+                            }
+                            .product-right {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 120px;
+                                height: 160px;
+                                border-left: 1px dashed #ccc;
+                                padding-top: 50px;
+                                @media(max-width:320px){
+                                    /* width: 100px; */
+                                }
+                                @media(width:1024px){
+                                     width: 100px; 
+                                }
+                                >p {
+                                    margin-bottom: 0;
+                                    >strong {
+                                        font-size: 30px;
+                                    }
+                                    text-align: center;
+                                }
+                                &::before,
+                                &::after {
+                                    content: "";
+                                    width: 16px;
+                                    height: 16px;
+                                    position: absolute;
+                                    border-radius: 50%;
+                                    background-color: #ccc;
+                                    left: -8px;
+                                }
+                                &::before {
+                                    top: -8px;
+                                }
+                                &::after {
+                                    bottom: -8px;
+                                }
+                                .tooltips {
+                                    position: absolute;
+                                    top: 20px;
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 新闻区域 */
+
+#news {
+    padding: 40px 0;
+    .row {
+        >div {
+            >h4 {
+                border-bottom: 1px dashed #ccc;
+                position: relative;
+                text-align: center;
+                line-height: 40px;
+                &::after {
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    position: absolute;
+                    right: -10px;
+                    bottom: -5px;
+                }
+            }
+            .nav-tabs {
+                border-bottom: 0;
+                /* 在less里面可以嵌套媒体查询 在sm屏幕和xs屏幕就生效百分比 同时居中显示 */
+                @media(max-width: 992px) {
+                    >li {
+                        width: 25%;
+                        >a {
+                            margin: 0px auto;
+                        }
+                    }
+                }
+                >li {
+                    >a {
+                        border-radius: 50%;
+                        margin-top: 10px;
+                        color: #ccc;
+                        width: 60px;
+                        height: 60px;
+                        border: 0;
+                        &:hover {
+                            background-color: @main-color;
+                        }
+                        >i {
+                            font-size: 30px;
+                        }
+                    }
+                    &.active {
+                        >a {
+                            background-color: @main-color;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                .tab-pane {
+                    >ul {
+                        >li {
+                            list-style: none;
+                            line-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 合作伙伴 */
+
+#partner {
+    .container {
+        >ul {
+            >li {
+                width: (100%/9);
+                float: left;
+                list-style: none;
+                text-align: center;
+                >a {
+                    color: #666;
+                    text-decoration: none;
+                    &:hover {
+                        color: @main-color;
+                    }
+                    >i {
+                        font-size: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+    /*滑动有4个事件 常用3前3个 移动端特有的事件只能在手机和模拟器里使用 要使用addEventListener 添加 而且要确保元素有宽高
+    1. touchstart  滑动开始的事件
+    2. touchmove   滑动中（移动的时候）的事件
+    3. touchend   滑动结束的事件
+    4. touchcancel  滑动取消事件（意外取消的事件 几乎不用  突然来电话之类中断）*/
+    // 当滑动开始的时候 手触摸到div上就会触发的事件  一次滑动只会触发一次
+    div.addEventListener('touchstart', function() {
+    	console.log('touchstart');
+    });
+    // 当在div里面滑动的时候会不断触发（一次滑动可能会触发多次）
+    div.addEventListener('touchmove', function () {
+    	console.log('touchmove');	
+    });
+    // 当松开手的时候触发 一个滑动过程只会触发一次
+    div.addEventListener('touchend', function () {
+    	console.log('touchend');
+    });
+    </script>
+</body>
+
+</html>

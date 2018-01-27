@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    //1. 获取box元素
+    var box = document.querySelector('.box');
+    //2. 添加事件
+    /**
+     * 1. 添加滑动开始和滑动中事件
+     * 2. 在滑动开始获取开始 的时候手指的X和Y轴的位置
+     * 3. 在滑动中获取滑动中 的时候手指的X和Y轴的位置
+     * 4. 用滑动中手指的位置-滑动开始手指的位置求得滑动的距离
+     * 5. 将滑动距离作为偏移设置到box上
+     */
+    var startX, startY, moveX, moveY, distanceX, distanceY;
+    box.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+    box.addEventListener('touchmove', function(e) {
+        moveX = e.touches[0].clientX;
+        moveY = e.touches[0].clientY;
+        distanceX = moveX-startX;
+        distanceY = moveY-startY;
+        box.style.transform = "translate("+distanceX+"px,"+distanceY+"px)";
+    });
+    box.addEventListener('touchend', function() {
+
+    });
+    </script>
+</body>
+
+</html>

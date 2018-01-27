@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微金所</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 1. 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 2. 引入字体图标的css文件 -->
+    <link rel="stylesheet" href="css/font.css">
+    <!-- 3. 引入主页的less文件  rel="stylesheet/less"-->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 4. 引入less.js编译器 -->
+    <script src="lib/less/less.js"></script>
+    <!-- 
+    引包的原则 
+        1. 先引入第三方的包
+        2. 在引入自己的文件
+        3. 如果有依赖先引入依赖的 在引入不依赖的 -->
+</head>
+
+<body>
+    <!-- 先写页面的大结构 分为哪些块-->
+    <!-- 最外层的容器一般用id限定 （id唯一  id选择器优先级高 方便覆盖bootstrap） -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <!-- 顶部通栏 -->
+        <!-- 响应式工具没有向上兼容的效果 媒体查询限定了范围 -->
+        <div class="topbar hidden-xs hidden-sm">
+            <!-- 版心容器  》 全局CSS样式 》 概览 》 布局容器 -->
+            <div class="container">
+                <div class="row">
+                    <!-- 栅格系统 》 全局CSS样式 》 栅格系统  -->
+                    <div class="col-md-2">
+                        <a href="#" class="qr-code">
+                            <!-- 字体图标 》 组件 》 字体图标 -->
+                            <!-- <i class="glyphicon glyphicon-phone"></i> -->
+                            <i class="icon-mobilephone"></i> 手机微金所
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                            <img src="img/c_06.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <span><i class="glyphicon glyphicon-earphone"></i>4006-89-4006（服务时间：9:00-21:00）</span>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#">常见问题</a>
+                        <a href="#">财富登录</a>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- 按钮 》 全局CSS样式 》 按钮 》 预定义样式+尺寸 -->
+                        <div class="btn btn-danger btn-sm">免费注册</div>
+                        <a href="#" class="btn btn-link">登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 导航条 》 组件 》 导航条 -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- 左边的品牌logo 在移动端也能显示 -->
+                <div class="navbar-header">
+                    <!-- 按钮在移动端的时候右边折叠菜单按钮 在PC是不显示 -->
+                    <!-- data-toggle="collapse"  是否开启collapse 的功能 -->
+                    <!-- data-target="#bs-example-navbar-collapse-1"  控制折叠的内容 指定的是选择器 -->
+                    <!-- aria-expanded="false" 盲人设备使用 -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- 放品牌logo的地方 -->
+                    <a class="navbar-brand" href="#">
+                        <i class="icon-icon"></i>
+                        <i class="icon-logo"></i>
+                    </a>
+                </div>
+                <!-- 所有的导航链接 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!-- 带了sr-only 屏幕阅读器使用 盲人设备使用 -->
+                        <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">我要借款</a></li>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">新手专区</a></li>
+                        <li><a href="#">最新动态</a></li>
+                        <li><a href="#">微论坛</a></li>
+                    </ul>
+                    <!-- 右侧的导航链接 -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">个人中心</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- 指示器 轮播图小圆点 -->
+            <ol class="carousel-indicators">
+                <!-- data-target="#carousel-example-generic" 用来指定小圆点控制的轮播图容器的选择器 -->
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <!-- 每个item就是每一个轮播图对象
+            每个轮播图对象里面有2张图 大图和小图 
+            把大图和小图这种会变化的值作为属性插入到item里面 -->
+                <div class="item active" data-large-image="img/slide_01_2000x410.jpg" data-small-image="img/slide_01_640x340.jpg">
+                    <!-- 响应式轮播图 大图在 sm md lg都显示
+                小图在xs显示 -->
+                    <!-- 会造成pc的端会同时加载大图和小图
+                在手机端也会同时加载大图小图 -->
+                    <!-- 需要在大屏幕就只加载大图的标签（只会加载大图）
+                超小屏幕的时候就只加载小图的标签 （只加载小图） -->
+                    <!--  <a href="#" class="large-image hidden-xs" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+                <a href="#" class="small-image hidden-sm hidden-md hidden-lg">
+                    <img src="img/slide_01_640x340.jpg" alt="">
+                </a> -->
+                </div>
+                <div class="item" data-large-image="img/slide_02_2000x410.jpg" data-small-image="img/slide_02_640x340.jpg">
+                </div>
+                <div class="item" data-large-image="img/slide_03_2000x410.jpg" data-small-image="img/slide_03_640x340.jpg">
+                </div>
+                <div class="item" data-large-image="img/slide_04_2000x410.jpg" data-small-image="img/slide_04_640x340.jpg">
+                </div>
+            </div>
+            <!-- 控制器 左右控制箭头 -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <!-- 支付交易保障 -->
+    <section id="payment">
+        <div class="container">
+            <div class="row hidden-xs">
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- 媒体对象 》 组件 》 媒体对象 -->
+                    <div class="media">
+                        <a href="#">
+                            <div class="media-left">
+                                <i class="icon-meiyuan"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">支付交易保障</h4>
+                                <p>银联支付全程保障财产安全</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 立即预约 -->
+    <section id="booking"></section>
+    <!-- 产品推荐 -->
+    <section id="products"></section>
+    <!-- 全部新闻 -->
+    <section id="news"></section>
+    <!-- 合作伙伴 -->
+    <footer id="partner"></footer>
+    <!-- 2. 引入jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 3. 引入bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 引入自己的JS文件 -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

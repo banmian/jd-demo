@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- 组件》导航条 -->
+	<!-- 导航条的父容器 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+        		<!-- 移动端的切换菜单 -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            	 <!-- 移动端显示的时候右侧的按钮 -->
+            	 <!-- data-toggle="collapse"  自定义属性 控制切换菜单功能是否开启 -->
+            	  <!--data-target="#bs-example-navbar-collapse-1" 控制要切换的目标元素 指定要控制的选择器# . -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                	  <!-- sr-only 盲人设备使用 屏幕阅读器 -->
+                    <span class="sr-only">Toggle navigation</span>
+                    <!-- span是按钮里面的横杠 -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 品牌Logo -->
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <!-- 所有的导航项 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- 左边的导航项 -->
+                <ul class="nav navbar-nav">
+                    <!-- li就是每一个导航项 active当前正被点击的导航项 -->
+                    <li class="active"><a href="#">导航1 </a></li>
+                    <li><a href="#">导航2</a></li>
+                    <li><a href="#">导航3</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                <!-- 右侧的导航项 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

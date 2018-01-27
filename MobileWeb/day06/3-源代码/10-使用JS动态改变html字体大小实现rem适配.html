@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    	margin: 0px;
+    	padding: 0px;
+    }
+    div {
+        width: 5rem;
+        height: 5rem;
+        background-color: pink;
+        float: left;
+        border-left: 1px solid #fff;
+        box-sizing: border-box;
+        font-size: 0.375rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        文字1
+    </div>
+    <div>
+        文字2
+    </div>
+    <script>
+    /*320  32
+        		360 36
+640 屏幕根元素字体大小就是64px
+        		屏幕 / 10*/
+    var windowWidth = document.documentElement.clientWidth;
+    console.log(windowWidth);
+    var htmlfontSize = windowWidth / 10;
+    document.querySelector('html').style.fontSize = htmlfontSize + 'px';
+    window.addEventListener('resize', function() {
+        var windowWidth = document.documentElement.clientWidth;
+        console.log(windowWidth);
+        var htmlfontSize = windowWidth / 10;
+        document.querySelector('html').style.fontSize = htmlfontSize + 'px';
+    });
+    </script>
+</body>
+
+</html>

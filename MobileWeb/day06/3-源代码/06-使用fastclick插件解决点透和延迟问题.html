@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    div {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    
+    a {
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        color: #000;
+        font-size: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="https://so.m.jd.com/category/all.html">超链接</a>
+    <div></div>
+    <button>弹出</button>
+    <!-- fastclick能解决点击事件的延迟问题 
+	同时在PC移动端都可以使用
+	同时解决点透的问题 -->
+    <!-- 1. 引包 -->
+    <script src="lib/fastclick/fastclick.js"></script>
+    <!-- 2. 初始化fastclick 可以给页面的所有元素绑定fastclick的点击事件 -->
+    <script>
+    window.addEventListener("load", function() {
+    	// 绑定body里面的所有的元素都绑定fastclick
+        FastClick.attach(document.body);
+        var button  = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 绑定了fastclick之后就直接添加click事件就可以
+        button.addEventListener('click', function () {
+        		div.style.display = 'block';
+        });
+        div.addEventListener('click', function () {
+        	this.style.display = 'none';
+        });
+    });
+    </script>
+</body>
+
+</html>

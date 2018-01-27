@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+	<!-- 标签页 》 JS插件 》 标签页 -->
+    <div class="container">
+        <!-- 标签页的标题 -->
+        <ul class="nav nav-tabs" role="tablist">
+        		<!-- data-toggle="tab" 开关 是否开启tab栏功能 -->
+        		<!-- href="#home" 作用不是用来做锚点跳转 控制要切换的内容的选择器 -->
+        		<!-- 也可以使用自定义属性 data-target="#home"  来代替href -->
+        		<!-- aria-controls="product1" 
+        		role="tab" -->
+            <li role="presentation" class="active"><a href="#product1" data-target="#product1" aria-controls="product1" role="tab" data-toggle="tab">特别推荐</a></li>
+            <li role="presentation"><a href="#product2" aria-controls="product2" role="tab" data-toggle="tab">微投资</a></li>
+            <li role="presentation"><a href="#product3" aria-controls="product3" role="tab" data-toggle="tab">微小宝</a></li>
+            <li role="presentation"><a href="#product4" aria-controls="product4" role="tab" data-toggle="tab">微消费</a></li>
+            <li role="presentation"><a href="#product5" aria-controls="product5" role="tab" data-toggle="tab">微增利</a></li>
+            <li role="presentation"><a href="#product6" aria-controls="product6" role="tab" data-toggle="tab">微金宝</a></li>
+            <li role="presentation"><a href="#product7" aria-controls="product7" role="tab" data-toggle="tab">微转让</a></li>
+        </ul>
+        <!--标签页的内容 -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active home" id="product1">1</div>
+            <div role="tabpanel" class="tab-pane" id="product2">2</div>
+            <div role="tabpanel" class="tab-pane" id="product3">3</div>
+            <div role="tabpanel" class="tab-pane" id="product4">4</div>
+            <div role="tabpanel" class="tab-pane" id="product5">5</div>
+            <div role="tabpanel" class="tab-pane" id="product6">6</div>
+            <div role="tabpanel" class="tab-pane" id="product7">7</div>
+        </div>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

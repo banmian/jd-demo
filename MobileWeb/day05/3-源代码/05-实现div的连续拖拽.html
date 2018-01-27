@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+    // 2.定义滑动开始 滑动结束的变量
+    /*开始的X  开始的Y 滑动中的X 滑动中的Y 滑动距离X 滑动距离Y  当前的X(作为下一次的起点) 当前的Y(作为下一次滑动的起点)*/
+    var startX = startY = moveX = moveY = distanceX = distanceY = currentX = currentY = 0;
+    // 1. 添加滑动开始事件
+    div.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        console.log(startX);
+    });
+
+
+    // 添加touchmove事件
+    div.addEventListener('touchmove', function(e) {
+        moveX = e.changedTouches[0].clientX;
+        moveY = e.changedTouches[0].clientY;
+        console.log(moveX);
+        distanceX = moveX - startX;
+        distanceY = moveY - startY;
+        console.log(distanceX);
+        // 设置div位移手指移动的距离
+        div.style.transform = 'translate(' + (currentX + distanceX) + 'px,' + (currentY + distanceY) + 'px)';
+    });
+    // 在touchend松开手的事件里面记录滑动的距离
+    div.addEventListener('touchend', function(e) {
+        /*把之前的所有的位移的距离累加起来 作为div下一次滑动的起点*/
+        currentX += distanceX;
+        currentY += distanceY;
+    });
+    </script>
+</body>
+
+</html>

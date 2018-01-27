@@ -1,0 +1,12 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+
+/*1. 除了公共级别的样式,其余样式全部由模块前缀
+2. 尽量使用直接子代选择器 少用间接子代选择器避免误杀
+*/
+
+#header {}
+
+#header > .topbar {}

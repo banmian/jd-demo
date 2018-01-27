@@ -1,0 +1,168 @@
+/* less里面可以完全的兼容CSS */
+/* 导入 */
+/* 把别的less文件的代码导入到当前less文件里面 */
+@import 'base.less';
+
+/* body{
+	background-color: yellowgreen;
+} */
+
+
+/* 1. 定义变量 */
+
+
+/* js定义变量 */
+
+
+/* var 变量名 = 变量值; */
+
+
+/* less定义变量 */
+
+
+/* @变量名:变量值; */
+
+
+/* 一般网站主题颜色 很多地方都会变化的值 */
+
+
+/* 定义主题色变量 变量中间可以有横杠 */
+
+
+
+/* 使用变量 */
+
+body {
+    /* 定义和使用变量都要带@符号 */
+    /* background-color: @main-color; */
+}
+
+
+/* 2. 混入自定义函数 Mixin */
+
+
+/* function fun(size){
+	函数代码
+} */
+
+
+/* 定义一个自定义函数 */
+
+.bordertb {
+    border-top: 1px solid @main-color;
+    border-bottom: 1px solid @main-color;
+}
+
+.box {
+    height: 50px;
+    /* 调用自定义函数 */
+    .bordertb;
+}
+
+.box2 {
+    height: 50px;
+    margin-top: 20px;
+    /* 调用自定义函数 */
+    .bordertb;
+}
+
+
+/* 自定义代参数函数 */
+/* @size就是自定义函数的参数  :1px是默认值  形参  如果有多个参数用逗号隔开 */
+.bordertb(@size:1px,@color:@main-color) {
+	/* 代码使用传入的参数 */
+    border-top: @size solid @color;
+    border-bottom: @size solid @color;
+}
+
+.box3{
+	height: 50px;
+	margin-top: 20px;
+	/* 传入实参就写值 */
+	.bordertb(5px,greenyellow);
+	/* less内置函数  内置函数是不带.自定义函数的带.*/
+	width: percentage(0.5);
+}
+
+/* 3. 嵌套 */
+/* css嵌套 产生大量冗余代码 并且代码层级性不高 */
+/* .container{
+	width: 1170px;
+	margin: 0px auto;
+	padding:0 15px;
+}
+.container .row{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.container .row .col{
+	font-size: 30px;
+	color:@main-color;
+} */
+
+/* less嵌套 */
+/* 优势可以像标签一样层次分明 并且代码不会冗余（也可以跳级 因为最终还是会编译成CSS嵌套） */
+.container{
+	width: 1170px;
+	margin: 0px auto;
+	padding:0 15px;
+	/* &在container就代表container
+	.row &
+	.row .container */
+	.row &{
+		width: 1150px;
+		border:1px solid #f40;
+	}
+	.row{
+		margin-left: -15px;
+		margin-right: -15px;
+		.col{
+			font-size: 30px;
+			color:@main-color;
+			/* >表示子代 */
+			> a{
+				color:pink;
+				text-decoration: none;
+				/* &关键字写在谁里面就表示谁 */
+				&:hover{
+					color:yellowgreen;
+				}
+				/* 也是表示当前的a */
+				&::before{
+					content:'伪元素';
+					color:#0ff;
+				}
+			}
+			>ul{
+				>li{
+					list-style: none;
+					/* &表示当前的li 交集选择器 有li并且有active类名的元素 */
+					&.active{
+						color:red;
+						/* +表示下一个兄弟选择器 */
+						&+li{
+							color:yellow;							
+						}
+					}
+				}
+				/* li.active{
+					color:red;
+				} */
+			}
+		}
+	}
+	/* 也可以跳级 继承 */
+	a{
+		color:pink;
+		text-decoration: none;
+	}
+}
+
+/* 嵌套里面的& 跟JSthis关键字一样 表示当前元素
+一般&会在伪元素 伪类 交集选择器使用 */
+
+
+/* 注释 */  /**/  //  跟JS一样两种注释都能用
+
+//编译后会删除
+/*编译后会保留*/

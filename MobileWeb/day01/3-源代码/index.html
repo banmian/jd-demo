@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微金所</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 1. 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    
+</head>
+
+<body>
+    <!-- 先写页面的大结构 分为哪些块-->
+    <!-- 最外层的容器一般用id限定 （id唯一  id选择器优先级高 方便覆盖bootstrap） -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <!-- 顶部通栏 -->
+        <div class="topbar">
+            <!-- 版心容器  》 全局CSS样式 》 概览 》 布局容器 -->
+            <div class="container">
+                <!-- 栅格系统 》 全局CSS样式 》 栅格系统  -->
+                <div class="col-md-2">
+                    <a href="#">
+                    <!-- 字体图标 》 组件 》 字体图标 -->
+                    	<i class="glyphicon glyphicon-phone"></i>
+                        
+        					 手机微金所 
+        					 <i class="glyphicon glyphicon-chevron-down"></i>
+        				</a>
+                </div>
+                <div class="col-md-5">
+                    <span><i class="glyphicon glyphicon-earphone"></i>4006-89-4006（服务时间：9:00-21:00）</span>
+                </div>
+                <div class="col-md-2">
+                    <a href="#">常见问题</a>
+                    <a href="#">财富登录</a>
+                </div>
+                <div class="col-md-3">
+                    <!-- 按钮 》 全局CSS样式 》 按钮 》 预定义样式+尺寸 -->
+                    <div class="btn btn-danger btn-sm">免费注册</div>
+                    <a href="#" class="btn btn-link">登录</a>
+                </div>
+            </div>
+        </div>
+        <!-- 导航条 -->
+        <nav class="nav"></nav>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide">
+    </section>
+    <!-- 支付交易保障 -->
+    <section id="payment"></section>
+    <!-- 立即预约 -->
+    <section id="booking"></section>
+    <!-- 产品推荐 -->
+    <section id="products"></section>
+    <!-- 全部新闻 -->
+    <section id="news"></section>
+    <!-- 合作伙伴 -->
+    <footer id="partner"></footer>
+    <!-- 2. 引入jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 3. 引入bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+        .large-image{
+            display: block;
+            height: 410px;
+            background-position: center center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 轮播图小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 用来指定小圆点控制的轮播图容器的选择器 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <!-- 由于大图片比页面宽度大 宽度会缩放 高度也会缩放 
+                如果要保持410px的高度并且图片居中显示 直接设置高度会拉伸 只能使用背景图来处理 -->
+                <a href="#" class="large-image" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+            </div>
+            <div class="item">
+                <a href="#" class="large-image" style="background-image:url(img/slide_02_2000x410.jpg)"></a>
+            </div>
+            <div class="item">
+                <a href="#" class="large-image" style="background-image:url(img/slide_03_2000x410.jpg)"></a>
+            </div>
+            <div class="item">
+                <a href="#" class="large-image" style="background-image:url(img/slide_04_2000x410.jpg)"></a>
+            </div>
+        </div>
+        <!-- 控制器 左右控制箭头 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

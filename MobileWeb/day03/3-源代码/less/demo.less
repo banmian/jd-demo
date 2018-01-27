@@ -1,0 +1,176 @@
+/* less的语法 */
+
+
+/* 6. 导入可以把别的less文件导入到主文件 */
+
+@import 'base.less';
+
+/* 1. 定义变量 */
+
+
+/* js里面使用var关键字
+
+var color = '#fff';
+
+
+less@变量名:变量值;
+less的变量可以有-
+变量的值可以是css的任意的值 red  #fff rgb()  rgba()
+@color:red;
+@color-red:red; */
+
+@color: red;
+
+/* 2. 使用变量 */
+
+body {
+    /* 使用变量也要带@符号 */
+    background-color: #fff;
+}
+
+
+/* 3. 混入(混合minix) 相当于JS的自定义函数 */
+
+
+/* 定义一个自定义函数 */
+
+.bt {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+div {
+    height: 100px;
+    /* 使用自定义函数 */
+    .bt;
+    /* 	border-radius: 5px;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;	 */
+}
+
+p {
+    height: 100px;
+    .bt;
+}
+
+h1 {
+    height: 100px;
+    .bt;
+}
+
+
+/* 带参数的mixin(带参数的自定义函数) */
+
+
+/* function fun(name){
+	name = name || '张三’;
+}
+fun('张三') */
+
+
+/* @size:1px; 默认值 如果传了参数就用传的如果没传就默认值 可以带多个参数用分号隔开*/
+
+.bt(@size: 1px;
+@size2: 2px;
+) {
+    border-top: @size solid #ccc;
+    border-bottom: @size solid #ccc;
+}
+
+section {
+    height: 100px;
+    .bt(10px);
+}
+
+header {
+    height: 100px;
+    margin-top: 10px;
+    .bt;
+}
+
+
+/* 4. 嵌套 */
+
+
+/* css嵌套 */
+
+.container {
+    width: 1170px;
+    margin: 0px auto;
+    padding: 0 15px;
+}
+
+.container .row {
+    margin: 0 -15px;
+}
+
+.container .row .col {
+    color: red;
+    font-size: 50px;
+}
+
+
+/* less的嵌套 */
+
+.container {
+    width: 1170px;
+    margin: 0px auto;
+    padding: 0 15px;
+    .row {
+        margin: 0 -15px;
+        .col {
+            color: red;
+            font-size: 50px;
+            width: floor(100%/3);
+            a {
+                color: red;
+                font-size: 20px;
+                /* &表示当前的a标签 相当于JS this一样 */
+                &:hover {
+                    color: #666;
+                    text-decoration: none;
+                }
+                &::before {
+                    content: "a标签的伪元素";
+                    color: pink;
+                }
+            }
+            ul {
+                li {
+                    list-style: none;
+                    font-size: 30px;
+                    /* +表示下一个个兄弟元素 */
+                    &.active + li {
+                        color: pink;
+                    }
+                }
+                /* li.active{
+            							color:pink;
+            	} */
+            }
+        }
+    }
+}
+
+
+/* 嵌套里面有一个特殊符号& 表示当前元素 */
+
+
+/* &在哪个括号里面就表示哪个选择器  通常用在伪类 伪元素 和交集选择器 */
+
+
+/* 5. 运算符 */
+
+span {
+    font-size: (12px * 1.5);
+}
+
+ul li {
+    width: (100% / 9);
+    float: left;
+    height: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color:saturate(hsl(90, 80%, 50%), 0%);
+}

@@ -1,0 +1,91 @@
+/* 1. 最外层的容器尽量用id选择器 层级高方便覆盖bootstrap样式
+2. 选择标签选择器的时候尽量用子代选择器 >a  >li  >div  避免误杀后代的元素
+3. 高度尽量不要给最外面的容器写死高度  给子容器加高度 撑开父容器的高度 */
+/* 微金所主页的主题色 */
+@main-color:#e92322;
+
+/* 头部区域 */
+#header{
+	/* 顶部通栏 */
+	.topbar{
+		border-bottom: 1px solid #ccc;
+		.row{
+			>div{
+				height: 40px;
+				line-height: 40px;
+				font-size: 12px;
+				/* border-left: 1px solid #ccc;
+				&:first-child{
+					border-left: 0;
+				} */
+				&+div{
+					border-left: 1px solid #ccc;
+				}
+				.btn-danger{
+					background-color: @main-color;
+				}
+				.mobile-link{
+					>img{
+						position: absolute;
+						left: 50%;
+						transform:translateX(-50%);
+						top: 40px;
+						z-index: 999;
+						display: none;
+					}
+					&:hover{
+						>img{
+							display: block;
+						}
+					}
+				}
+				.btn-link{
+					color:#666;
+				}
+			}
+		}
+	}
+	/* 导航条 */
+	.navbar-default{
+		/* 导航条的头部 左侧logo和移动端的按钮 */
+		background-color: #fff;
+		.navbar-header{
+			.navbar-toggle{
+				margin-top: 23px;
+			}
+			.navbar-brand{
+				height: 80px;
+				/* 因为导航里面的a都自带了15px上下padding 高度80其实内容只有50px 行高就只能设置50px */
+				line-height: 50px;
+				.icon-icon{
+					font-size: 30px;
+					color:@main-color;
+				}
+				.icon-logo{
+					font-size: 30px;
+					color:#333;
+				}
+			}
+		}
+		/* 导航条的身体 */
+		.navbar-collapse{
+			.navbar-nav{
+				>li{
+					>a{
+						height: 80px;
+						line-height: 50px;
+						&:hover{
+							border-bottom: 2px solid @main-color;
+						}
+					}
+					&.active{
+						>a{
+							background-color: #fff;
+							border-bottom: 2px solid @main-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}

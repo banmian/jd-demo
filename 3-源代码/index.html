@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 添加视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>微金所主页</title>
+    <!-- 1. 引入bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 引入微金所字体图标的样式文件 -->
+    <link rel="stylesheet" href="css/font.css">
+</head>
+
+<body>
+    <!-- 头部区域 外层容器使用id来限定 提高选择器的优先级方便覆盖bootstrap样式-->
+    <header id="header">
+        <!-- 顶部通栏 -->
+        <div class="topbar">
+            <!-- 居中的容器 全局CSS样式 》 概览 》 布局容器 -->
+            <div class="container">
+                <!-- 栅格系统 》 全局CSS样式 》 栅格系统 -->
+                <!-- 文本水平居中 》 全局CSS样式 》排版 》对齐 -->
+                <div class="row text-center">
+                    <div class="col-md-2">
+                        <!-- 文本颜色 》 全局CSS样式 》 辅助类 》 情境文本颜色 -->
+                        <a href="#" class="text-muted">
+                            <!-- 字体图标 》 组件 》 字体图标 -->
+                            <i class="glyphicon glyphicon-phone"></i> 手机微金所
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                        <span>4006-89-4006（服务时间：9:00-21:00）</span>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="text-muted">常见问题 </a>
+                        <a href="#" class="text-muted">财富登录</a>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- 按钮 》 全局CSS样式 》 按钮 预定义样式按钮 按钮的尺寸 -->
+                        <a class="btn btn-danger btn-sm">免费注册</a>
+                        <a href="#" class="text-muted">登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 导航条 -->
+        <nav class="navbar navbar-default">
+        		<!-- 把导航默认的容器改成居中容器 -->
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                		<!-- 移动端的时候显示的按钮 点击展开收缩导航的按钮 -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                    	<i class="icon-icon"></i>
+                    	<i class="icon-logo"></i>
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    		<!-- sr-only是盲人设备屏幕阅读器使用的正常人是看不见 -->
+                        <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">我要借款</a></li>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">新手专区</a></li>
+                        <li><a href="#">最新动态</a></li>
+                        <li><a href="#">微论坛</a></li>                     
+                    </ul>
+                    <!-- 右侧的导航 -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">个人中心</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide"></section>
+    <!-- 支付交易保障 网站特色介绍 -->
+    <section id="feature"></section>
+    <!-- 立即预约区域 -->
+    <section id="booking"></section>
+    <!-- 产品推荐区域 -->
+    <section id="products"></section>
+    <!-- 全部新闻区域 -->
+    <section id="news"></section>
+    <!-- 合作伙伴区域 -->
+    <footer id="pratner"></footer>
+    <!-- 2. 引入jquery -->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 3. 引入bootstrap的JS文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

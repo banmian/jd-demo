@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 400px;
+			height: 400px;
+			border:50px solid rgba(255,0,0,0.1);
+			padding: 50px;
+			background: url(images/sprites.png) no-repeat;
+			box-sizing: border-box;			
+			/*background-origin: padding-box;*/
+			/*改变背景图的定位的起点 默认是padding-box*/
+			background-origin: content-box;
+
+			/*background-origin: border-box;*/
+
+			/*背景图的裁切 就是裁切盒模型意外的背景图 默认值是 border-box*/
+			/*background-clip: border-box;	*/
+			/*background-clip: padding-box;	*/
+			background-clip: content-box;	
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

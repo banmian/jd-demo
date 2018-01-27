@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        background: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+    // 什么情况表示单击操作 点击了屏幕没有发生触摸 （没有触发touchmove就是一个单击事件）
+
+    // 移动端的click事件一般叫tap事件  轻触事件
+    function tap(dom,callback) {
+        var isMove = false;
+        dom.addEventListener('touchstart', function() {
+        });
+        dom.addEventListener('touchmove', function() {
+            isMove = true;
+        });
+        dom.addEventListener('touchend', function(e) {
+            if (isMove == false) {
+                //单击操作 马上执行单击事件的代码
+               if(callback){
+               	// 调用函数 把当前touchend事件的事件源对象作为实参传给调用事件的回调函数
+               	callback(e);
+               }
+            }
+            isMove = false;
+        });
+    }
+    // 定义函数
+    tap(div,function (e) {
+    	console.log('click');
+    	console.log(e.target);
+    });
+    // 封装的tap事件和zepto的tap事件都只能在移动端使用 并且会有点透问题
+    // 点透就是点击遮罩层会同时透过遮罩层点击到里面的超链接
+    </script>
+</body>
+
+</html>

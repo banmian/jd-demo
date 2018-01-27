@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: #f40;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		//1. 获取box元素
+		var box = document.querySelector('.box');
+		//2. 添加事件
+		box.addEventListener('touchstart',function (e) {
+			//e 是触发事件的事件源 也是一个事件对象这里是touch事件所以是touchEvent对象
+			/*touch对象里面有3个常用的属性分别是 
+				1. touches ： 表示 屏幕上的手指对象
+				2. targetTouches ： 表示 元素上的手指对象
+				3. changedTouches ： 表示 改变后的手指对象
+				4. 用法 touches 和 targetTouches用法一样 在touchstart 和 touchmouve 用来获取手指对象  在touchend事件里面不能用前两个因为手指都已经离开屏幕 屏幕和元素上就不存在手指对象   changedTouches通常是用在touchend事件
+			*/
+			console.log(e.touches);
+
+			/*touch对象上有3个系列常用的属性
+				1. clientX clientY 表示获取手指距离视口左上角的位置
+				2. pageX pageY 表示获取手指距离页面左上角的位置 包含滚动条
+				3. screenX screenY 表示获取手指距离屏幕走上街的位置
+				4. 通常在移动端没有滚动条 所以 clientX 和 pageX 和 screenX 通常使用  client系列
+			*/
+			console.log(e.touches[0].clientX);
+		});
+		box.addEventListener('touchmove',function () {
+			
+		});
+		box.addEventListener('touchend',function () {
+			
+		});
+	</script>
+</body>
+</html>

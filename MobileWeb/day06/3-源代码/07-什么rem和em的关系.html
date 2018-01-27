@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+    /*默认当前元素和根元素的字体都是16px所以使用em和rem是一样大的*/
+    html{
+    	font-size: 20px;
+    }
+    .box1 {
+        width: 10rem;
+        height: 10rem;
+        background-color: pink;
+        font-size: 20px;
+    }
+    
+    .box2 {
+        /*width: 10em;*/
+        /*height: 10em;*/
+        background-color: #ccc;
+        font-size: 40px;
+			
+        width: 5.3em;
+        height: 5.3em;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 	1. em : element  相对于当前元素的字体大小 当前元素字体大小是16px 1em=16px
+2. rem : root element 相对于根元素的字体大小 比如根元素html的字体大小是16px 1rem=16px -->
+
+<!-- 1. 如果使用em 字体大小每个元素都不太一样 不好统一设置em的值  也不方便全局修改 -->
+<!-- 2. 如果使用rem 就不会在意当前元素的字体大小 页面元素的字体可以任意 需要全局修改页面的rem的值大小  只需要修改根元素字体大小可以实现整个网页大小的变化 -->
+    <div class="box1">
+    	文字
+    </div>
+    <div class="box2">
+    	文字
+    </div>
+</body>
+
+</html>

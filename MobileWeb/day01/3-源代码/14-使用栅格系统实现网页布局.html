@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .row div {
+        border: 1px solid #ccc;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 在宽屏设备一行放4个div  每个div 25%
+		2. 在中屏设备一行放3个div  每个div 33.33%
+		3. 在小屏设备一行放2个div  每个div 50%
+		4. 在超小屏设备一行放1个div  每个div 100%  -->
+    <div class="container">
+        <div class="row">
+        <!-- 一个div可以同时放多个列类名    col-xs-12如果是12可以省略-->
+        	<div class="col-lg-3 col-md-4 col-sm-6 ">1</div>
+        	<div class="col-lg-3 col-md-4 col-sm-6 ">2</div>
+        	<div class="col-lg-3 col-md-4 col-sm-6 ">3</div>
+        	<div class="col-lg-3 col-md-4 col-sm-6 ">4</div>
+        </div>
+    </div>
+</body>
+
+</html>

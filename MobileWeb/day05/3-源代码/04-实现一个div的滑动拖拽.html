@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+    // 2.定义滑动开始 滑动结束的变量
+    var startX = startY = moveX = moveY = endX  = endY = distanceX = distanceY = 0;
+    // 1. 添加滑动开始事件
+    div.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        console.log(startX);
+    });
+    div.addEventListener('touchend', function(e) {
+        // 获取屏幕上的手指对象 屏幕上手指松开没有手了就获取不到
+        // console.log(e.touches);
+        // 在touchend事件里面使用changedTouches 来获取手指对象和位置  表示的是改变后的手指对象 （从无到有 或者从有到无（手指松开就相当于从有到无）） 记录最后一瞬间的手指对象（手指最后在哪里松开就是那个对象）
+        /*console.log(e.changedTouches);
+        endX = e.changedTouches[0].clientX;
+        console.log(endX);
+        distanceX = endX - startX;
+        console.log(distanceX);
+        // 设置div位移手指移动的距离
+        div.style.transform = 'translateX(' + distanceX + 'px)';*/
+    });
+
+    // 添加touchmove事件
+    div.addEventListener('touchmove', function(e) {
+        moveX = e.changedTouches[0].clientX;
+        moveY = e.changedTouches[0].clientY;
+        console.log(moveX);
+        distanceX = moveX - startX;
+        distanceY = moveY - startY;
+        console.log(distanceX);
+        // 设置div位移手指移动的距离
+        div.style.transform = 'translate(' + distanceX + 'px,'+distanceY+'px)';
+    });
+    </script>
+</body>
+
+</html>

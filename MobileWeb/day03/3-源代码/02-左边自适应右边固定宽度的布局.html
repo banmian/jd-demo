@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;	
+			box-sizing: border-box;
+		}
+		.left{
+			margin-right: 200px;
+			height: 200px;
+			background-color: pink;
+			/*如果加了margin-right 不能再写宽度100% 这个时候的宽度是自适应*/
+			/*width: 100%;*/
+		}
+		.col-sm-6{
+			width: 50%;
+			float: left;
+			border:10px solid #f40;
+			height: 100px;
+		}
+		.right{
+			width: 200px;
+			height: 300px;
+			background-color: #0f0;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="right"></div>
+		<div class="left">
+		文字
+		文字文字
+			<div class="col-sm-6">1</div>
+			<div class="col-sm-6">2</div>
+		</div>
+	</div>
+</body>
+</html>

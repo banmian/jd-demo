@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .mobileImg {
+        display: block;
+    }
+    
+    .mobileImg img {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 移动端轮播图使用小图片 宽高要等比例缩放 使用图片标签插入图片 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 就是轮播图下面的小圆点 -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播图的所有轮播项 -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_01_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_02_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_03_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_04_640x340.jpg" alt="...">
+                </a>
+            </div>
+        </div>
+        <!-- 左右控制器按钮 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

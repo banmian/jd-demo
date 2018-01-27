@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .pcImg {
+        display: block;
+        height: 410px;
+        background-position: center center;
+    }
+     .mobileImg {
+        display: block;
+    }
+    
+    .mobileImg img {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 就是轮播图下面的小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 控制哪个轮播图的切换 -->
+            <!-- data-slide-to 表示控制第几张轮播图的切换 通过轮播图的索引 从0开始 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播图的所有轮播项 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- 一个item就代表一项轮播图 -->
+            <!-- active 表示当前正在显示的轮播图 active有且只能有一个 -->
+            <!-- 给item定义两个自定义属性 分别存储当前item需要的两种图 -->
+            <!-- data-large-image="img/slide_01_2000x410.jpg"表示当前item需要的大图路径
+            data-samll-image="img/slide_01_640x340.jpg" 表示当前item需要的小图路径 -->
+            <div class="item active" data-large-image="img/slide_01_2000x410.jpg" data-small-image="img/slide_01_640x340.jpg">
+            	<!-- pcImg在 md 和 lg显示 在sm和xs隐藏
+            	mobileImg在sm 和xs显示 在md和lg隐藏 -->
+            	<!-- 在pc端也会加载移动端的图片
+            	在移动端也会加载PC端图片 -->
+               <!--  <a href="#" class="pcImg" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_01_640x340.jpg" alt="...">
+                </a> -->
+            </div>
+            <div class="item" data-large-image="img/slide_02_2000x410.jpg" data-small-image="img/slide_02_640x340.jpg">
+            </div>
+            <div class="item" data-large-image="img/slide_03_2000x410.jpg" data-small-image="img/slide_03_640x340.jpg">
+            </div>
+            <div class="item" data-large-image="img/slide_04_2000x410.jpg" data-small-image="img/slide_04_640x340.jpg">
+            </div>
+        </div>
+        <!-- 左右控制器按钮 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+        /**
+         * 1 . 需求： 当屏幕变化的时候 如果是移动端就加载移动端的a标签 如果是PC端就加载pc端a标签
+         * 1. 监听屏幕变化事件 resize
+         * 2. 获取当前变化后的屏幕宽度
+         * 3. 拿当前屏幕宽度判断是移动端还是PC端  屏幕宽度>640就是PC 否则就是移动
+         * 4. 如果是PC端插入pcImg标签
+         *       1. 获取所有item项
+         *       2. 遍历所有item项
+         *       3. 给每一个item项插入对应的pcImg标签
+         * 5. 如果是移动端插入mobileImg标签
+         *       1. 获取所有item项
+         *       2. 遍历所有item项
+         *       3. 给每一个item项插入对应的mobileImg标签
+         */
+        $(function () {
+           var items  = $('.carousel-inner .item');
+           $(window).on('resize',function () {
+                //获取屏幕宽度
+                var windowWidth = $(window).width();
+                if(windowWidth > 640){
+                    //PC端 
+                     items.each(function (index,value) {
+                        /*valueDOM元素不是jquery*/
+                       /* var largeImage = value.dataset['largeImage'];*/
+                        var largeImage = $(value).data('large-image')
+                        $(value).html('<a href="#" class="pcImg" style="background-image:url('+largeImage+')"></a>');
+                     });  
+                }else{
+                    //移动端
+                     items.each(function (index,value) {
+                        /*valueDOM元素不是jquery*/
+                        /*var smallImage = value.dataset['smallImage'];//原生获取*/
+                        var smallImage = $(value).data('small-image');//jquery获取
+                        $(value).html('<a href="#" class="mobileImg"><img src="'+smallImage+'" alt="..."></a> ');
+                     });  
+                }
+           }).trigger('resize');//事件注册完后马上触发一下事件
+        });
+    </script>
+</body>
+
+</html>

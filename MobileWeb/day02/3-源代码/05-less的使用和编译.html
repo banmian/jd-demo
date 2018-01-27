@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 1. 使用less的时候 rel要设置成rel="stylesheet/less" -->
+	<!-- rel 表示链接关系 当前链接的文档和当前网页的关系 -->
+	<!-- stylesheet  样式表
+	shortcut icon  站点图标 -->	
+	<link rel="stylesheet/less" href="less/demo.less">
+	<!-- 2. 引入一个less的编译器文件（因为less默认浏览器是不识别 浏览器只识别css最终还要把less代码转成css才能执行） -->
+	<script src="lib/less/less.js"></script>
+	<!-- 3. 注意less.js里面有ajax请求 （less.js要请求less文件来编译成CSS 请求必须要服务器才能请求） 所有页面必须要服务器打开 -->
+	<!-- 所有前提都要是一个文件夹 -->
+	<!-- 1. sublime（sublime优化版） 点击tools 》 sublimeserver > 点击start sublimeserver > 在页面上右键view in sublimeserver -->
+	<!-- 2. vscode  ctrl + shihft + 回车  按f1 再回车  右键open with live Server -->
+	<!-- 3. webstrom自带了 点击右上角浏览器打开就可以 -->
+</head>
+<body>
+<!-- 	<div></div>
+<p></p>
+<h1></h1> -->
+	<section></section>
+	<header></header>
+	<div class="container">
+		<div class="row">
+			<div class="col">1</div>
+			<div class="col">
+				<a href="#">超链接</a>
+			</div>
+			<div class="col">
+				<ul>
+					<li class="active">
+						导航1
+					</li>
+					<li>
+						导航1
+					</li>
+					<li>
+						导航1
+					</li>
+					<li>
+						导航1
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<span>文字</span>
+	<ul>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+</body>
+</html>

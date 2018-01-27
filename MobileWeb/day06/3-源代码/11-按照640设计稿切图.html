@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    header {
+        width: 640px;
+        height: 100px;
+        background-color: #ccc;
+    }
+    
+    section {
+        width: 640px;
+        height: 280px;
+    }
+    
+    #slide {
+        position: relative;
+    }
+    
+    #slide a {
+        display: block;
+    }
+    
+    #slide a img {
+        width: 640px;
+        height: 280px;
+    }
+    
+    ol {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+    }
+    
+    ol li {
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        list-style: none;
+        border-radius: 50%;
+        margin-left: 10px;
+        float: left;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    nav {
+        padding: 14px 11px;
+    }
+    
+    nav li {
+        width: 33.33%;
+        padding: 0 11px;
+        float: left;
+    }
+    
+    nav li a {
+        display: block;
+        width: 100%;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    nav li a img {
+        width: 186px;
+        height: 160px;
+    }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <section id="slide">
+        <ul class="clearfix">
+            <li>
+                <a href="#">
+                    <img src="images/l1.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <ol class="clearfix">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </section>
+    <nav>
+        <ul class="clearfix">
+            <li>
+                <a href="#">
+                    <img src="images/cp4.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/cp4.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/cp4.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+    /*320  32
+            		360 36
+
+            		屏幕 / 10*/
+    var windowWidth = document.documentElement.clientWidth;
+    console.log(windowWidth);
+    var htmlfontSize = windowWidth / 10;
+    document.querySelector('html').style.fontSize = htmlfontSize + 'px';
+    window.addEventListener('resize', function() {
+        var windowWidth = document.documentElement.clientWidth;
+        console.log(windowWidth);
+        var htmlfontSize = windowWidth / 10;
+        document.querySelector('html').style.fontSize = htmlfontSize + 'px';
+    });
+    </script>
+</body>
+
+</html>

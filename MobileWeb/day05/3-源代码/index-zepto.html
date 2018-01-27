@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我的京东</title>
+    <!-- 1.引入主页的less文件 -->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 2. 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 京东主体布局容器  最大宽度640 居中显示  在移动端就是100%-->
+    <div id="layout">
+        <!-- 顶部通栏 -->
+        <header id="topbar">
+            <!-- logo精灵图 -->
+            <i class="icon-logo"></i>
+            <form action="#">
+                <!-- 搜索图标 -->
+                <i class="icon-search"></i>
+                <!-- 搜索框使用search类型 让右下角的回车键变成搜索-->
+                <input type="search" placeholder="提示">
+            </form>
+            <a href="#" class="login">登录</a>
+        </header>
+        <!-- 轮播图 -->
+        <section id="slide">
+            <ul class="clearfix">
+                <!-- li*8>a[#]>img[src="images/l$.jpg"] -->
+                <!-- li*8>a[#]>img[src="images/l$@2.jpg"] -->
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/l1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l4.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l5.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l6.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l7.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/l1.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ol class="clearfix">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </section>
+        <!-- 导航条 -->
+        <nav id="nav">
+            <ul class="clearfix">
+                <!-- li*8>a[#]>img[src="images/nav$@0.png"]+p{分类查询} -->
+                <li>
+                    <a href="#">
+                        <img src="images/nav0.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav1.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav2.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav3.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav4.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav5.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav6.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav7.png" alt="">
+                        <p>分类查询</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 秒杀区域 -->
+        <section id="seckill">
+            <!-- 秒杀头部 -->
+            <div class="seckill-heading clearfix">
+                <i class="icon-clock"></i>
+                <div class="seckill-name">掌上秒杀</div>
+                <div class="seckill-count-down">
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <div class="seckill-more">更多></div>
+            </div>
+            <!-- 秒杀身体 -->
+            <div class="seckill-body">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="images/detail01.jpg" alt="">
+                            <p>￥100.00</p>
+                            <del>￥1000.00</del>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/seckill-img1.jpg" alt="">
+                            <p>￥100.00</p>
+                            <del>￥1000.00</del>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/detail01.jpg" alt="">
+                            <p>￥100.00</p>
+                            <del>￥1000.00</del>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 京东超市 -->
+        <section id="jd-market">
+            <!-- 超市标题 -->
+            <div class="jd-market-heading">
+                <h4 class="bb">京东超市</h4>
+            </div>
+            <!-- 超市的内容 -->
+            <div class="jd-market-body clearfix">
+                <div class="pull-left w50 ">
+                    <a href="#">
+                        <img src="images/cp1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="pull-right w50 bl">
+                    <a href="#" class="bb">
+                        <img src="images/cp2.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/cp3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- 京东超市 -->
+        <section id="jd-market">
+            <!-- 超市标题 -->
+            <div class="jd-market-heading">
+                <h4 class="bb">京东超市</h4>
+            </div>
+            <!-- 超市的内容 -->
+            <div class="jd-market-body clearfix">
+                <div class="pull-left w50 br">
+                    <a href="#" class="bb">
+                        <img src="images/cp5.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/cp6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="pull-right w50 ">
+                    <a href="#">
+                        <img src="images/cp4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- 京东超市 -->
+        <section id="jd-market">
+            <!-- 超市标题 -->
+            <div class="jd-market-heading">
+                <h4 class="bb">京东超市</h4>
+            </div>
+            <!-- 超市的内容 -->
+            <div class="jd-market-body clearfix">
+                <div class="pull-left w50 ">
+                    <a href="#">
+                        <img src="images/cp1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="pull-right w50 bl">
+                    <a href="#" class="bb">
+                        <img src="images/cp2.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/cp3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 1. 引入zepto的包 -->
+    <!-- <script src="lib/zepto/zepto.min.js"></script> -->
+    <!-- 2. 引入一个selector.js包 （支持jquery的选择器扩展） -->
+    <!-- <script src="lib/zepto/selector.js"></script> -->
+    <!-- 3. 引入fx.js包 支持动画animate方法 -->
+    <!-- <script src="lib/zepto/fx.js"></script> -->
+    <!-- 4. 引入touch.js包 支持移动端的touch事件 -->
+    <!-- <script src="lib/zepto/touch.js"></script> -->
+    <script src="lib/zepto定制版/zepto.min.js"></script>
+    <script>
+    var index = 1;
+    // 获取轮播图的ul 默认zepto使用  querySelectorAll 不支持eq之类的jquery选择器
+    var slideUl = $('#slide ul:eq(0)');
+    var slideWidth = $('#slide').width();
+    var timeId = null;
+    startTime();
+
+    function startTime() {
+        timeId = setInterval(function() {
+            index++;
+            setAnimate();
+        }, 1000);
+    }
+
+    function setAnimate() {
+        slideUl.animate({
+            'transform': 'translateX(' + (-index * slideWidth) + 'px)'
+        }, 200, 'ease', function() {
+            // 动画执行完毕的回调函数 跟过渡完成事件的一样 
+            if (index >= 9) {
+                // 设置index为1
+                index = 1;
+                // 直接回调index的位置
+                slideUl.css('transform', 'translateX(' + (-index * slideWidth) + 'px)');
+            }
+            if (index <= 0) {
+                index = 8;
+                // 直接回调index的位置
+                slideUl.css('transform', 'translateX(' + (-index * slideWidth) + 'px)');
+            }
+        });
+    }
+    slideUl.swipeLeft(function() {
+        // 清除时钟
+        clearInterval(timeId);
+        // 切换到下一张 index++
+        index++;
+        // 设置动画
+        setAnimate();
+        //滑动完重新添加时钟
+        startTime();
+    });
+    slideUl.swipeRight(function(e) {
+        console.log(e);
+        // 清除时钟
+        clearInterval(timeId);
+        // 切换到上一张 index--;
+        index--;
+        // 设置动画
+        setAnimate();
+        //滑动完重新添加时钟
+        startTime();
+    });
+    </script>
+</body>
+
+</html>

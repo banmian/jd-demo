@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /* 3. 写样式
+   			1. 给父容器固定宽度（100%）
+   			2. 给子容器的宽度自动（跟内容一样宽）根据内容撑开
+   			3. 给父容器加overflow:hidden  (不能有滚动条) */
+    
+    #wrapper {
+        height: 300px;
+        overflow: hidden;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 2. 写页面的结构 -->
+    <!-- 父容器固定宽度或者高度 -->
+    <div id="wrapper">
+        <!-- 子容器 宽度或者高度会比父容器大 -->
+        <ul>
+            <li>这是第1个li</li>
+            <li>这是第2个li</li>
+            <li>这是第3个li</li>
+            <li>这是第4个li</li>
+            <li>这是第5个li</li>
+            <li>这是第6个li</li>
+            <li>这是第7个li</li>
+            <li>这是第8个li</li>
+            <li>这是第9个li</li>
+            <li>这是第10个li</li>
+            <li>这是第11个li</li>
+            <li>这是第12个li</li>
+            <li>这是第13个li</li>
+            <li>这是第14个li</li>
+            <li>这是第15个li</li>
+            <li>这是第16个li</li>
+            <li>这是第17个li</li>
+            <li>这是第18个li</li>
+            <li>这是第19个li</li>
+            <li>这是第20个li</li>
+            <li>这是第21个li</li>
+            <li>这是第22个li</li>
+            <li>这是第23个li</li>
+            <li>这是第24个li</li>
+            <li>这是第25个li</li>
+            <li>这是第26个li</li>
+            <li>这是第27个li</li>
+            <li>这是第28个li</li>
+            <li>这是第29个li</li>
+            <li>这是第30个li</li>
+        </ul>
+    </div>
+    <!-- 1. 先引入iscroll js文件 -->
+    <script src="lib/iscroll/iscroll.js"></script>
+    <!-- 4. 调用JS代码初始化插件 -->
+    <script>
+    // 调用JS方法来实现滑动功能 告诉插件 #wrapper元素要做滑动 传入是父容器的选择器
+    var myScroll = new IScroll('#wrapper');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link rel="stylesheet/less" type="text/css" href="styles.less" /> -->
+	<!-- rel表示链接关系 表示当前链接的文档和当前页面的关系 less文件 需要设置成 rel="stylesheet/less"  -->
+	<!-- 引入less文件 -->	
+	<link rel="stylesheet/less" href="less/demo.less">
+	<!-- 引入less的编译器文件 （用来临时编译less的脚本） 作为内嵌的样式嵌入页面-->
+	<!-- 注意这个less.js文件必须放到Less文件的后面引入 而且要放到head标签里面 -->
+	<!-- 这个编译器需要编译样式 会影响页面渲染 所以放上面 -->
+	<!-- 这个页面要使用服务器访问 -->
+	<!-- less的执行的时候1. 请求（ajax请求）demo.less这个文件  把文件的代码读取进行编译 编译好了之后嵌入页面上  只要是的服务器都可以-->
+	<!-- 而且项目必须是文件夹 -->
+	<!-- 1. sublime 点击tools(工具)  》 选中sublimeserver > start sublimeserver > 在页面上右键view in sublimeserver -->
+	<!-- 2. vscode 在页面右键open in liveserver  ctrl+shift+回车-->
+	<!-- 3. webstrom自带 点击右上角图标 -->
+	<!-- localhost 或者 127都可以 -->
+	<script src="lib/less/less.js"></script>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">1</div>
+			<div class="col">
+				<ul>
+					<li class="active">
+						内容
+					</li>
+					<li>
+						内容
+					</li>
+					<li>
+						内容
+					</li>
+				</ul>
+			</div>
+			<div class="col">
+				<a href="#">超链接</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

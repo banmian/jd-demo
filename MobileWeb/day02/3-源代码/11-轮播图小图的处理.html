@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 轮播图小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 用来指定小圆点控制的轮播图容器的选择器 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <!-- 小图片 移动端的图片640px 是在移动端需要等比例缩放 需要使用图片标签实现 -->
+            <div class="item active">
+                <a href="#" class="small-image">
+                    <img src="img/slide_01_640x340.jpg" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="small-image">
+                    <img src="img/slide_02_640x340.jpg" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="small-image">
+                    <img src="img/slide_03_640x340.jpg" alt="">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="small-image">
+                    <img src="img/slide_04_640x340.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 控制器 左右控制箭头 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .large-image {
+        display: block;
+        height: 410px;
+        background-position: center center;
+    }
+    
+    .small-image img {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 轮播图小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 用来指定小圆点控制的轮播图容器的选择器 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <!-- 每个item就是每一个轮播图对象
+            每个轮播图对象里面有2张图 大图和小图 
+            把大图和小图这种会变化的值作为属性插入到item里面 -->
+            <div class="item active" data-large-image="img/slide_01_2000x410.jpg" data-small-image="img/slide_01_640x340.jpg">
+                <!-- 响应式轮播图 大图在 sm md lg都显示
+                小图在xs显示 -->
+                <!-- 会造成pc的端会同时加载大图和小图
+                在手机端也会同时加载大图小图 -->
+                <!-- 需要在大屏幕就只加载大图的标签（只会加载大图）
+                超小屏幕的时候就只加载小图的标签 （只加载小图） -->
+                <!--  <a href="#" class="large-image hidden-xs" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+                <a href="#" class="small-image hidden-sm hidden-md hidden-lg">
+                    <img src="img/slide_01_640x340.jpg" alt="">
+                </a> -->
+            </div>
+            <div class="item" data-large-image="img/slide_02_2000x410.jpg" data-small-image="img/slide_02_640x340.jpg">
+            </div>
+            <div class="item" data-large-image="img/slide_03_2000x410.jpg" data-small-image="img/slide_03_640x340.jpg">
+            </div>
+            <div class="item" data-large-image="img/slide_04_2000x410.jpg" data-small-image="img/slide_04_640x340.jpg">
+            </div>
+        </div>
+        <!-- 控制器 左右控制箭头 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+    /*1. 需求
+            1. 当屏幕是小 中 大屏幕的时候就加载 大图
+            2. 当屏幕是超小屏幕到时候就加载小图*/
+    $(function() {
+
+        $(window).on('resize', function() {
+            // 1. 获取屏幕宽度
+            var windowWidth = $(window).width();
+            //3. 获取所有的item
+            var items = $('.carousel-inner .item');
+            console.log(windowWidth);
+            //2. 如果屏幕宽度大于640就显示大图
+            if (windowWidth > 640) {
+                //显示大图
+                items.each(function(index, value) { //index表示循环的索引  value循环的每个DOM对象（DOM不是jquery） $(value)
+                    // 在JS里面获取当前item的图片 大图就获取大图属性的图片
+                    // 原生DOM获取自定义属性
+                    // var largeImage = value.dataset['largeImage'];
+                    // jquery的获取自定义属性的函数
+                    var largeImage = $(value).data('large-image');
+                    // console.log(largeImage);
+                    $(value).html('<a href="#" class="large-image" style="background-image:url(' + largeImage + ')"></a>');
+                });
+            } else {
+                //显示大图
+                items.each(function(index, value) { //index表示循环的索引  value循环的每个DOM对象（DOM不是jquery） $(value)
+                    var smallImage = $(value).data('small-image');
+                    // console.log(largeImage);
+                    $(value).html('<a href="#" class="small-image"><img src="' + smallImage + '" alt=""></a>');
+                });
+            }
+        }).trigger('resize'); //可以在事件注册完毕手动触发一次事件
+    });
+    </script>
+</body>
+
+</html>

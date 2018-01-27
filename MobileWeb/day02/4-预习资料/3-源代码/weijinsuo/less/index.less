@@ -1,0 +1,471 @@
+@mainColor: yellow;
+body {
+    font-family: "Microsoft YaHei";
+}
+
+// 头部区域
+#header {
+    >.topbar {
+        >.container {
+            >.row {
+                >div {
+                    height: 40px;
+                    line-height: 40px;
+                    >a {
+                        color: #666;
+                        font-size: 12px;
+                        >img {
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -60px;
+                            top: 27px;
+                            z-index: 1;
+                            display: none;
+                        }
+                    }
+                    .mobile-link:hover {
+                        >img {
+                            display: block;
+                        }
+                    }
+                    >.btn-danger {
+                        background-color: @mainColor;
+                        color: #fff;
+                    }
+                    &+div {
+                        border-left: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+    >.navbar-default {
+        background-color: #fff;
+        margin-bottom: 0;
+        >.container {
+            >.navbar-collapse {
+                >.navbar-nav {
+                    >li {
+                        >a {
+                            height: 80px;
+                            line-height: 50px;
+                            &:hover {
+                                border-bottom: 2px solid @mainColor;
+                            }
+                        }
+                        &.active {
+                            >a {
+                                background-color: #fff;
+                                &:hover {
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            >.navbar-header {
+                >.navbar-toggle {
+                    margin-top: 23px;
+                }
+                >.navbar-brand {
+                    line-height: 50px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+//轮播图区域
+@media(min-width:640px) {
+    #slide {
+        >.slide {
+            >.carousel-inner {
+                >.item {
+                    height: 410px;
+                    background-position: center center;
+                }
+            }
+        }
+    }
+}
+
+//特色介绍
+#feature {
+    padding: 40px 0;
+    >.container {
+        >.row {
+            >div {
+                margin: 10px 0;
+                >.media {
+                    >a {
+                        color: #666;
+                        text-decoration: none;
+                        &:hover {
+                            color: #e92322;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//立即预约
+#booking {
+    padding: 20px 0 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+@media (max-width:768px) {
+    .ul-wapper {
+        overflow-x: scroll;
+    }
+    .ul-wapper >.nav-tabs {
+        width: 750px;
+    }
+}
+
+//产品推荐
+#products {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+    >.container {
+        >.ul-wapper {
+            >.nav-tabs {
+                >li {
+                    &.active {
+                        >a {
+                            background-color: #f5f5f5;
+                            border-bottom: 3px solid #e92322;
+                        }
+                    }
+                    >a {
+                        color: #666;
+                        font-size: 16px;
+                        border: 0 none;
+                        &:hover {
+                            background-color: #f5f5f5;
+                        }
+                    }
+                }
+            }
+        }
+        >.tab-content {
+            padding-top: 20px;
+            >.tab-pane {
+                >.row {
+                    >div {
+                        padding: 0;
+                        >.panel-default {
+                            >.panel-heading {
+                                float: right;
+                                width: 120px;
+                                height: 160px;
+                                padding: 45px 0;
+                                border-bottom: 0;
+                                border-left: 1px dashed #ccc;
+                                background-color: #fff;
+                                position: relative;
+                                >p {
+                                    text-align: center;
+                                    margin-bottom: 0;
+                                    >strong {
+                                        font-size: 30px;
+                                    }
+                                }
+                                >.tools {
+                                    position: absolute;
+                                    width: 100%;
+                                    top: 20px;
+                                    text-align: center;
+                                }
+                                &::before,
+                                &::after {
+                                    content: "";
+                                    width: 16px;
+                                    height: 16px;
+                                    border-radius: 8px;
+                                    background-color: #f5f5f5;
+                                    left: -8px;
+                                    position: absolute;
+                                }
+                                &::before {
+                                    top: -8px;
+                                }
+                                &::after {
+                                    bottom: -8px;
+                                }
+                            }
+                            >.panel-body {
+                                height: 160px;
+                                margin-right: 120px;
+                                >.row {
+                                    >div {
+                                        margin-top: 10px;
+                                        >p {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            &.active {
+                                background-color: #e92322;
+                                color: #fff;
+                                >.panel-heading {
+                                    background-color: #e92322;
+                                    color: #fff;
+                                }
+                                &::before {
+                                    content: "\e915";
+                                    font-family: "weijinsuo";
+                                    font-size: 40px;
+                                    position: absolute;
+                                    left: 0px;
+                                    top: -8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//全部新闻
+#news {
+    >.container {
+        >.row {
+            >div {
+                >h4 {}
+                >.nav-tabs {
+                    border-bottom: 0;
+                    >li {
+                        &.active {
+                            >a {
+                                background-color: #e92322;
+                            }
+                        }
+                        >a {
+                            border-radius: 30px;
+                            margin-top: 10px;
+                            border: 0;
+                            color: #f1f2f3;
+                            &:hover {
+                                background-color: #e92322;
+                            }
+                        }
+                    }
+                }
+                >.tab-content {
+                    >.tab-pane {
+                        >ul {
+                            >li {
+                                padding: 10px 0;
+                                list-style: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//合作伙伴
+#partner {
+    >.container {
+        >h4 {
+            text-align: center;
+        }
+        >ul {
+            font-size: 0;
+            >li {
+                display: inline-block;
+                width: calc(100%/9);
+                list-style: none;
+                text-align: center;
+                &+li {
+                    border-left: 1px dashed #ccc;
+                }
+                >a {
+                    text-decoration: none;
+                    color: #666;
+                    &:hover {
+                        color: #e92322;
+                    }
+                    >i {
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-danger {
+    color: #FFFFFF;
+    background-color: @mainColor;
+    border-color: @mainColor;
+}
+
+// 1. 定义字体图标的对应字体
+@font-face {
+    //1.指定定义字体的名称
+    font-family: 'weijinsuo';
+    //2.引入字体图标对应的字体文件
+    src: url(../fonts/MiFie-Web-Font.ttf) format("truetype");
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: "weijinsuo";
+    font-style: normal;
+}
+
+//1.手机图标的使用
+.icon-mobilephone::before {
+    content: "\e908";
+}
+
+.icon-mobilephone::before {
+    content: "\e908";
+}
+
+.icon-mobilephone::before {
+    content: "\e908";
+}
+
+.icon-icon::before {
+    content: "\e920";
+    font-size: 50px;
+    color: @mainColor;
+    vertical-align: middle;
+}
+
+.icon-logo::before {
+    content: "\e93e";
+    font-size: 32px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.icon-meiyuan::before {
+    content: "\e907";
+    font-size: 30px;
+}
+
+.icon-naozhong::before {
+    content: "\e906";
+}
+
+.icon-video::before {
+    content: "\e905";
+}
+
+.icon-news1::before {
+    content: "\e90e";
+    font-size: 30px;
+}
+
+.icon-news2::before {
+    content: "\e90f";
+    font-size: 30px;
+}
+
+.icon-news3::before {
+    content: "\e910";
+    font-size: 30px;
+}
+
+.icon-news4::before {
+    content: "\e911";
+    font-size: 30px;
+}
+
+.icon-partner1::before {
+    content: "\e946";
+}
+
+.icon-partner2::before {
+    content: "\e92f";
+}
+
+.icon-partner3::before {
+    content: "\e92e";
+}
+
+.icon-partner4::before {
+    content: "\e92a";
+}
+
+.icon-partner5::before {
+    content: "\e92a";
+}
+
+.icon-partner6::before {
+    content: "\e929";
+}
+
+.icon-partner7::before {
+    content: "\e92c";
+}
+
+.icon-partner8::before {
+    content: "\e92b";
+}
+
+.icon-partner9::before {
+    content: "\e92d";
+}
+
+// Bootstrap 扩展样式 
+// 免费注册按钮
+.btn-register {
+    color: #FFFFFF;
+    background-color: @mainColor;
+    border-color: @mainColor;
+}
+
+.btn-register:hover,
+.btn-register:focus,
+.btn-register:active,
+.btn-register.active,
+.open .dropdown-toggle.btn-register {
+    color: #FFFFFF;
+    background-color: #e92322;
+    border-color: #E92322;
+}
+
+.btn-register:active,
+.btn-register.active,
+.open .dropdown-toggle.btn-register {
+    background-image: none;
+}
+
+.btn-register.disabled,
+.btn-register[disabled],
+fieldset[disabled] .btn-register,
+.btn-register.disabled:hover,
+.btn-register[disabled]:hover,
+fieldset[disabled] .btn-register:hover,
+.btn-register.disabled:focus,
+.btn-register[disabled]:focus,
+fieldset[disabled] .btn-register:focus,
+.btn-register.disabled:active,
+.btn-register[disabled]:active,
+fieldset[disabled] .btn-register:active,
+.btn-register.disabled.active,
+.btn-register[disabled].active,
+fieldset[disabled] .btn-register.active {
+    background-color: #E92322;
+    border-color: #E92322;
+}
+
+.btn-register .badge {
+    color: #E92322;
+    background-color: #FFFFFF;
+}

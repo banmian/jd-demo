@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .row div {
+        border: 1px solid #ccc;
+        height: 100px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+    }
+    /*  媒体查询 ： 通过查询媒体(通常指的屏幕) 来作为条件设置对应的样式 类似JS的if判断
+   @media screen and (条件){
+   			//条件成立执行的代码 
+   }
+   screen and可以省略  如果写必须and前后要有空格
+   	 @media (条件){
+   
+   	 }
+   	 if(条件){
+   	 	
+   	 } */
+    /* 媒体查询的条件（常见有3种）
+   	 	1. min-width:1200px  屏幕的最小宽度大于等于1200px的时候条件成立
+   	 	2. max-width:1200px  屏幕的最大宽度小于等于1200px的时候条件成立
+   	 	3. width:1200px    屏幕的宽度等于1200px的时候条件成立
+			条件的必须要带px单位
+			如果有多个条件用and连接(相当于JS的&&)  注意and必须有空格  (条件1) and (条件2)
+   	 	 */
+   	 	 /*  1. 什么是响应式 ： 在不同的设备展示不同网页布局
+	2. 认识常见的设备的屏幕宽度
+		  1.  超小屏幕（手机）    768px以下
+		  2.  小屏设备（ipad）    768px-992px
+		  3.  中等屏幕（旧式电脑）    992px-1200px
+		  4.  宽屏设备（现代电脑）   1200px以上
+	需求： 
+		1. 在宽屏设备一行放4个div  每个div 25%
+		2. 在中屏设备一行放3个div  每个div 33.33%
+		3. 在小屏设备一行放2个div  每个div 50%
+		4. 在超小屏设备一行放1个div  每个div 100% */
+    /*1. 在宽屏设备一行放4个div  每个div 25%*/
+    
+    @media(min-width: 1200px) {
+        /*大括号里面的单独的代码块 需要写选择器{属性:值;}*/
+        .row div {
+            width: 25%;
+        }
+    }
+    /*2. 在中屏设备一行放3个div  每个div 33.33%*/
+    
+    @media(min-width: 992px) and (max-width: 1200px) {
+        .row div {
+            width: 33.33%;
+        }
+    }
+    /*3. 在小屏设备一行放2个div  每个div 50%*/
+    
+    @media(min-width: 768px) and (max-width: 992px) {
+        .row div {
+            width: 50%;
+        }
+    }
+    /*4. 在超小屏设备一行放1个div  每个div 100% -*/
+    
+    @media(max-width: 768px) {
+        .row div {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+  
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+  
+</body>
+
+</html>

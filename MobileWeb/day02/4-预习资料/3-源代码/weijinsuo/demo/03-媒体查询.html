@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .container-fluid {
+        height: 200px;
+        background-color: #f40;
+        margin: 0px auto;
+    }
+    /**
+         *  屏幕宽度在1200px 以上 容器的宽度就是1170px
+         *  屏幕宽度在992px - 1200px 之间的时候 容器的宽度就是970
+         *  当屏幕宽度小于992px 的时候 大于768px的时候 750px
+         */
+    /* if(width>1200){
+            .container width = 1170px
+        }*/
+    /* @media相当于js的if 叫做媒体查询 后面跟(判断的条件) */
+    /*但是判断的条件只能写屏幕相关的  宽度 高度*/
+    /*判断只有 屏幕 等于什么值的时候 执行什么代码
+        屏幕小于什么 值的时候
+        屏幕大于什么值的时候*/
+    /*width:值 代表width等于后面的值的时候判断成立*/
+    /*min-width:值 代表 width大于后的值的时候条件成立 (常用)*/
+    /*max-width:值 代表width小于后面的值的时候条件成立*/
+    
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+    </div>
+</body>
+
+</html>

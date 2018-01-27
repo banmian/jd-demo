@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .row div {
+        border: 1px solid #ccc;
+        height: 100px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 什么是响应式 ： 在不同的设备展示不同网页布局
+	2. 认识常见的设备的屏幕宽度
+		  1.  超小屏幕（手机）    768px以下
+		  2.  小屏设备（ipad）    768px-992px
+		  3.  中等屏幕（旧式电脑）    992px-1200px
+		  4.  宽屏设备（现代电脑）   1200px以上
+	需求： 
+		1. 在宽屏设备一行放4个div  每个div 25%
+		2. 在中屏设备一行放3个div  每个div 33.33%
+		3. 在小屏设备一行放2个div  每个div 50%
+		4. 在超小屏设备一行放1个div  每个div 100% -->
+	<!-- 3. 结论： 使用JS的获取屏幕宽度判断实现响应式切换 可以实现 但是代码比较繁琐 违背了JS代码的原则（JS 用来实现网站功能和交互的 JS用来写逻辑代码）样式的问题尽量给CSS完成 -->
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>  
+     <div class="row">
+        <div class="col1">1</div>
+        <div class="col1">2</div>
+        <div class="col1">3</div>
+        <div class="col1">4</div>
+    </div>
+    <script>
+    // 添加一个resize事件  屏幕宽度变化就会触发的事件
+    window.addEventListener('resize', resizeWidth);
+    resizeWidth();
+    function resizeWidth() {
+        // 1. 获取屏幕的宽度
+        var windowWidth = document.body.offsetWidth;
+        // 2. 获取所有col
+        var cols = document.querySelectorAll('.col');
+        // console.log(windowWidth);
+        if (windowWidth > 1200) {
+            // 1. 在宽屏设备一行放4个div  每个div 25%
+            for (var i = 0; i < cols.length; i++) {
+                cols[i].style.width = '25%';
+            }
+        } else if (windowWidth < 1200 && windowWidth > 992) {
+            // 2. 在中屏设备一行放3个div  每个div 33.33$
+            for (var i = 0; i < cols.length; i++) {
+                cols[i].style.width = '33.33%';
+            }
+        } else if (windowWidth < 992 && windowWidth > 768) {
+            // 3. 在小屏设备一行放2个div  每个div 50%
+            for (var i = 0; i < cols.length; i++) {
+                cols[i].style.width = '50%';
+            }
+        } else if (windowWidth < 768) {
+            //4. 在超小屏设备一行放1个div  每个div 100% 
+            for (var i = 0; i < cols.length; i++) {
+                cols[i].style.width = '100%';
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: #f40;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		//1. 获取box元素
+		var box = document.querySelector('.box');
+		//2. 添加事件
+		//添加触摸开始事件touchstart 当手指触摸到元素的时候会触发
+		box.addEventListener('touchstart',function () {
+			console.log('touchstart');
+		});
+		//添加触摸中事件touchmove 当手指在元素上滑动的时候会触发（会持续触发）
+		box.addEventListener('touchmove',function () {
+			console.log('touchmove');
+		});
+		//添加触摸结束事件touchend 当手指在当前元素上触摸后离开屏幕的时候会触发
+		box.addEventListener('touchend',function () {
+			console.log('touchend');
+		});
+		//添加触摸中断事件touchcancel 当触摸过程中遇到一些意外的情况中断触摸的时候会触发比如触摸的时候来了电话会中断触摸 (不常用了解即可)
+		box.addEventListener('touchcancel',function () {
+			console.log('touchcancel');
+		});
+	</script>
+</body>
+</html>

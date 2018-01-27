@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- 导航条 》 组件 》 导航条 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- 左边的品牌logo 在移动端也能显示 -->
+            <div class="navbar-header">
+                <!-- 按钮在移动端的时候右边折叠菜单按钮 在PC是不显示 -->
+                <!-- data-toggle="collapse"  是否开启collapse 的功能 -->
+                <!-- data-target="#bs-example-navbar-collapse-1"  控制折叠的内容 指定的是选择器 -->
+                <!-- aria-expanded="false" 盲人设备使用 -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 放品牌logo的地方 -->
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <!-- 所有的导航链接 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                	  <!-- 带了sr-only 屏幕阅读器使用 盲人设备使用 -->
+                    <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">我要借款</a></li>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">新手专区</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">微论坛</a></li>
+                </ul>
+                <!-- 右侧的导航链接 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

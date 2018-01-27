@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+    .row {
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    	<!-- row是行类似表格tr
+    	.col-xx-xx列 类似表格的td -->
+    	 <!-- .row自带margin-left和margin-right -15px和container的paddign15弥补 -->
+        <div class="row">
+        		<!-- 行里面还有列 列里面又有padding让文字靠中间 -->
+        		<!-- 列有4种档次 分别
+        		1. col-xs  在 超小屏幕 手机 生效 768px以下
+        		2. col-sm  在 小屏幕 平板  生效 768px-992px
+        		3. col-md  在 中等屏幕 桌面显示器  生效 992px-1200px
+        		4. col-lg  在 大屏幕 大桌面显示器  1200px以上 -->
+        		<!-- 列有列数  一行默认最多是12列
+        		通常列数划分 一行就放12列  放12个div每个div 1/12  col-xs-1
+        		一行放4列  col-xs-3
+        		一行放3列  col-xs-4
+        		一行放2列  col-xs-6
+        		一行放1列  col-xs-12
+        		
+        		如果使用栅格系统等比例划分必须是12的约数
+        		可以根据情况不等比例 但是一行最多是12列 如果多出会换行 -->
+        		<!-- 注意不是一个.row里面就只能放1行  可以代表多行 -->
+        		<div class="row">
+        			<div class="col-xs-12"></div>
+        			<div class="col-xs-12"></div>
+        			<div class="col-xs-12"></div>
+        			<div class="col-xs-12"></div>
+        		</div>
+        		<div class="col-xs-4">fs</div>
+        </div>
+    </div>
+</body>
+
+</html>

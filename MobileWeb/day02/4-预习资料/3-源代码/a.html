@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #f40;
+        margin: 0px auto;
+        
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    var box = document.querySelector('.box');
+    var num = 0;
+    var flag = false;
+    setInterval(function() {
+        if (num < -150) {
+            flag = true;
+        } else if (num == 0) {
+            flag = false;
+        }
+        if (flag) {
+            num++;
+        } else {
+            num--;
+        }
+        box.style.marginTop = num + 'px';
+    }, 10);
+    </script>
+</body>
+
+</html>

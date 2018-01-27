@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'weijinsuo';
+  src:  url('fonts/weijinsuo.eot?5dlj13');
+  src:  url('fonts/weijinsuo.eot?5dlj13#iefix') format('embedded-opentype'),
+    url('fonts/weijinsuo.ttf?5dlj13') format('truetype'),
+    url('fonts/weijinsuo.woff?5dlj13') format('woff'),
+    url('fonts/weijinsuo.svg?5dlj13#weijinsuo') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'weijinsuo' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telphone:before {
+  content: "\e900";
+}
+.icon-mobilephone:before {
+  content: "\e901";
+}
+

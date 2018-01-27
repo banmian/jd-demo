@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	1. 电脑里面的文字的字体  电脑里面有很多字体微软雅黑 华文彩云 还有一些特殊的字体Webdings 这些是操作系统自带的字体
+	2. 除了自带的字体之外还可以使用web字体（自定义字体）
+	3. 字体是由什么东西组成的：字体由一些图标组成的通过图标生成字体文件  引入字体文件制作一个
+	4. 如何生成一个字体（如果生成一个字体文件）
+		1. 准备图标  （设计师会给你  图标都是svg格式 （矢量图））
+		2. 打开https://icomoon.io/
+		3. 点击右上角icomoonApp
+		4. 点击左上角import icons(导入图标)
+		5. 选中导入的图标 点击右上角的菜单 selectAll
+		6. 点击右下角的generate font(生成字体)
+		7. 可以做一些设置调整  点击preferences 设置字体名字和类名的前缀
+		8. 点击右下角download
+	5. 生成好了字体之后会有一个fonts文件夹 里面就是生成好的字体文件
+		常见有4种字体文件 （为了兼容不同的浏览器）
+		svg svg
+		ttf  truetype 兼容谷歌
+		woff woff
+		eot  embedded-opentype 兼容ie8
+	6. 还需要定义一个字体
+		css3自定义字体
+		@font-face {
+		要定义的字体的名字
+		  font-family: 'weijinsuo';
+		引入字体文件（引入多个文件是兼容不同浏览器）
+		同时要声明format 声明字体文件的格式
+		  src:
+		    url('fonts/weijinsuo.ttf?ggfcj8') format('truetype'),
+		    url('fonts/weijinsuo.woff?ggfcj8') format('woff'),
+		    url('fonts/weijinsuo.svg?ggfcj8#weijinsuo') format('svg');
+		  font-weight: normal;
+		  font-style: normal;
+		}
+</body>
+</html>

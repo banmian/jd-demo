@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 1. 引入定义好的字体 -->
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/*2. 使用字体*/
+		body{
+			font-family: 'weijinsuo';
+		}
+		/* 3. 使用图标的编码（自定义的图标 不能用默认编码abcde这些）
+			通常字体图标的编码都是e900 e901 Unicode
+		4. 这种Unicode编码只能通过伪元素content添加 */
+		i::before{
+			/*编码都要带\*/
+			content:'\e900';
+			font-style: normal;
+		}
+	</style>
+</head>
+<body>
+	<i></i>
+	<i class="icon-add"></i>
+	<i class="icon-arrow"></i>
+</body>
+</html>

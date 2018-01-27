@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script>
+		var div = document.querySelector('div');
+		// 当是单击的时候没有做滑动操作 才会触发click事件
+		// 但是即使单击会触发click click也比滑动事件要慢 比touchstart 和 touchend都要慢
+		// 大概慢300ms左右
+		// 延迟的原因 移动端为了兼容双击操作 如果300ms以内只有一次点击就是单击事件 如果有两次点击就是双击事件
+		/*如果解决延迟问题 使用fastclick解决
+		原理是通过监听touchend事件被触发的时候马上调用click事件*/
+		div.addEventListener('click', function () {
+			console.log('click');
+		});
+		div.addEventListener('touchstart', function () {
+			console.log('touchstart');
+		});
+		div.addEventListener('touchmove', function () {
+			console.log('touchmove');
+		});
+		div.addEventListener('touchend', function () {
+			console.log('touchend');
+		});
+	</script>
+</body>
+</html>

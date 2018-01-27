@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="css/font.css">
+    <!-- 1.  引入less文件 rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 2. 引入less编译器 文件  -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 最大的盒子使用id命名 后面会涉及到覆盖bootstrap样式 层级 id层级高比较容易覆盖样式
+    id用来区分每一个功能块 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <!-- 顶部通栏 -->
+        <div class="topbar hidden-xs hidden-sm">
+            <!-- 固定宽度且居中版心 -->
+            <div class="container">
+                <!-- text-center > 全局CSS样式》排班》对齐 -->
+                <div class="row text-center">
+                    <!-- 只要在md和lg显示只考虑以上栅格 -->
+                    <div class="col-md-2">
+                        <a href="#" class="mobile-link">
+                            <i class="icon-mobilephone"></i>
+                            <!-- 图标 》 bootstrap组件 》字体图标 -->
+                            <span> 手机微金所 </span>
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                            <img src="img/c_06.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <i class="glyphicon glyphicon-earphone"></i> 4006-89-4006（服务时间：9:00-21:00）
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#">常见问题</a>
+                        <a href="#">财富登陆</a>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- bootstrap的所有样式都和标签无关 样式在类名里面 只要使用按钮的类名就可以标签可以任意写 -->
+                        <button class="btn btn-danger btn-sm">免费注册</button>
+                        <a href="#" class="btn btn-link">登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 导航条 -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <i class="icon-icon"></i>
+                        <i class="icon-logo"></i>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">我要借款</a></li>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">新手专区</a></li>
+                        <li><a href="#">最新动态</a></li>
+                        <li><a href="#">微论坛</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">个人中心</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 指示器 就是轮播图下面的小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- data-target="#carousel-example-generic" 控制哪个轮播图的切换 -->
+            <!-- data-slide-to 表示控制第几张轮播图的切换 通过轮播图的索引 从0开始 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播图的所有轮播项 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- 一个item就代表一项轮播图 -->
+            <!-- active 表示当前正在显示的轮播图 active有且只能有一个 -->
+            <div class="item active">
+                <!-- pcImg在 md 和 lg显示 在sm和xs隐藏
+                mobileImg在sm 和xs显示 在md和lg隐藏 -->
+                <!-- 在pc端也会加载移动端的图片
+                在移动端也会加载PC端图片 -->
+               <!--  <a href="#" class="pcImg" style="background-image:url(img/slide_01_2000x410.jpg)"></a>
+                <a href="#" class="mobileImg">
+                    <img src="img/slide_01_640x340.jpg" alt="...">
+                </a> -->
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+        </div>
+        <!-- 左右控制器按钮 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </section>
+    <!-- 特色介绍区域 -->
+    <section id="feature"></section>
+    <!-- 立即预约区域 -->
+    <section id="booking"></section>
+    <!-- 产品区域 -->
+    <section id="products"></section>
+    <!-- 新闻区域 -->
+    <section id="news"></section>
+    <!-- 合作伙伴 -->
+    <footer id="partner"></footer>
+    <!-- 引入jquery -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- 引入Bootstrap的JS插件文件 -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
